@@ -3,61 +3,81 @@
 public class Main {
     public static void main(String[] args) {
         System.out.println("Задание №1");
-            for (int a = 0; a <= 10; a++) {
-                System.out.println("Итерация цикла " + a);
+        int salary = 15000;
+        int total = 0;
+        int monthCount = 0;
+        while (total < 2_459_000) {
+            total = total + salary;
+            monthCount++;
+            if (total >= 2_459_000) {
+                System.out.println("Месяц " + monthCount + ", сумма накоплений равна " + total + " рублей");
             }
+        }
 
         System.out.println("Задание №2");
-        for (int b = 10; b >= 0; b--) {
-            System.out.println("Итерация цикла " + b);
+        int count1 = 1;
+        int count2 = 10;
+        while (count1 <= 10) {
+            System.out.print(count1 + " ");
+            count1++;
+        }
+        System.out.println();
+        while (count2 > 0) {
+            System.out.print(count2 + " ");
+            count2--;
         }
 
         System.out.println("Задание №3");
-        for (int c = 0; c <= 17; c = c + 2) {
-            System.out.println("Только чётные числа от 0 до 17: " + c); // а 0 считается чётным или нет? его тоже выводит ведь
-        }
+        int population = 12_000_000;
+        int born = 17;
+        int die = 8;
+        int coefficientBornDie = population / 1000;
+        System.out.println(coefficientBornDie);
+        for (int year = 0; year <= 10; year++) {
+            population = population + (coefficientBornDie * born) - (coefficientBornDie * die);
+            System.out.println("Год " + year + ", численность населения составляет" + population);
+        } // возможно переменных можно было меньше, но для удобства решил так сделать и меньше вычислений всяких вписывать после for
+
         System.out.println("Задание №4");
-        for (int d = 10; d >= -10; d--) {
-            System.out.println("Все числа от 10 до -10: " + d);
-        }
+        int deposit = 15_000;
+        for (int month = 0; deposit < 12_000_000; month++) {
+            deposit = deposit + (deposit / 100 * 7);
+            System.out.println("Месяц " + month + ". На счету " + deposit + ", месячная прибыль " + (deposit / 100 * 7));
+        } // не совсем понял надо ли каждый месяц выводить или только что-то конкретное?
+        // удобно было иметь в задаче точный текст, в который надо вставлять значения
 
         System.out.println("Задание №5");
-        for (int e = 1904; e <= 2096; e = e + 4) {
-            System.out.println(e + " год является високосным");
+        int deposit1 = 15_000;
+        for (int month = 0; deposit1 < 12_000_000; month++) {
+            deposit1 = deposit1 + (deposit1 / 100 * 7);
+            if (month % 6 == 0 || deposit1 >= 12_000_000) {
+                System.out.println("Месяц " + month + ". На счету " + deposit1 + ", месячная прибыль " + (deposit1 / 100 * 7));
+            } // каждый 6й месяц выводится, но не сказано про последний месяц, когда цель достигнута.
+             // добавил вариацию небольшую в if, чтоб выводился и последний месяц тоже, когда цель достигнута, даже если он не кратный 6
         }
 
         System.out.println("Задание №6");
-        for (int f = 7; f <= 98; f = f + 7) {
-            System.out.println(f);
+        int deposit2 = 15_000;
+        for (int monthCount1 = 0; monthCount1 <= 9 * 12; monthCount1++) {
+            deposit2 = deposit2 + (deposit2 / 100 * 7);
+            if (monthCount1 % 6 == 0) {
+                System.out.println("Полугодие "+ monthCount1 / 6 + ", сумма накоплений " + deposit2);
+            } // не совсем понял отличие от прошлой задачи, суть та же про каждые 6 месяцев, только оформление чуть иное
         }
 
         System.out.println("Задание №7");
-        for (int g = 1; g <= 512; g = g * 2) {
-            System.out.println(g);
+        int friday = 6;
+        for (; friday <= 31; friday = friday + 7) {
+            System.out.println("Сегодня пятница, " + friday + "-е число. Необходимо подготовить отчёт");
         }
 
         System.out.println("Задание №8");
-        int salary = 29000;
-        int total = 0;
-        for (int h = 1; h < 12; h++) {
-            total = total + salary;
-            System.out.println("Месяц " + h + ", сумма накоплений равна " + total + " рублей");
-        }
-
-        System.out.println("Задание №9");
-        int salary1 = 29000;
-        int total1 = 0;
-        for (int i = 1; i < 12; i++) {
-            total1 = total1 + (total1 / 100);
-            total1 = total1 + salary1;
-            System.out.println("Месяц " + i + ", сумма накоплений равна " + total1 + " рублей");
-        }
-
-        System.out.println("Задание №10");
-        for (int j = 1; j <= 10; j++) {
-            int result = 0;
-            result = 2 * j;
-            System.out.println("2 * " + j + " = " + result);
+        int year = 0;
+        while (year < 2124) {
+            year = year + 79;
+            if (year > 1824 && year < 2124) {
+                System.out.println("Год пролёта кометы " + year);
+            } // не уверен, правильно ли, ибо для изменения выведения цифр придётся менять параметр if, но работает и ладно
         }
     }
 }
