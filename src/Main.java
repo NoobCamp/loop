@@ -65,7 +65,8 @@ public class Main {
 
         System.out.println("Задание №7");
         int friday = 6;
-        for (; friday <= 31; friday = friday + 7) {
+        for (; friday <= 31; friday += 7) {
+
             System.out.println("Сегодня пятница, " + friday + "-е число. Необходимо подготовить отчёт");
         }
 
@@ -74,7 +75,7 @@ public class Main {
         int year200ago = 1824;
         int year100ahead = 2124;
         while (year < 2124) {
-            year = year + 79;
+            year += 79;
             if (year > year200ago && year < year100ahead) {
                 System.out.println("Год пролёта кометы " + year);
             } // не уверен, правильно ли, ибо для изменения выведения цифр придётся менять параметр if, но работает и ладно
