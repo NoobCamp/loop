@@ -9,9 +9,7 @@ public class Main {
         while (total < 2_459_000) {
             total = total + salary;
             monthCount++;
-            if (total >= 2_459_000) {
                 System.out.println("Месяц " + monthCount + ", сумма накоплений равна " + total + " рублей");
-            }
         }
 
         System.out.println("Задание №2");
@@ -22,17 +20,17 @@ public class Main {
             count1++;
         }
         System.out.println();
-        while (count2 > 0) {
+        for (; count2 > 0; ) {
             System.out.print(count2 + " ");
             count2--;
         }
+        System.out.println();
 
         System.out.println("Задание №3");
         int population = 12_000_000;
         int born = 17;
         int die = 8;
         int coefficientBornDie = population / 1000;
-        System.out.println(coefficientBornDie);
         for (int year = 0; year <= 10; year++) {
             population = population + (coefficientBornDie * born) - (coefficientBornDie * die);
             System.out.println("Год " + year + ", численность населения составляет" + population);
@@ -73,9 +71,11 @@ public class Main {
 
         System.out.println("Задание №8");
         int year = 0;
+        int year200ago = 1824;
+        int year100ahead = 2124;
         while (year < 2124) {
             year = year + 79;
-            if (year > 1824 && year < 2124) {
+            if (year > year200ago && year < year100ahead) {
                 System.out.println("Год пролёта кометы " + year);
             } // не уверен, правильно ли, ибо для изменения выведения цифр придётся менять параметр if, но работает и ладно
         }
